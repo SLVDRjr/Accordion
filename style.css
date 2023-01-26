@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+}
+
+.accordion {
+  width: 520px;
+}
+
+h2 {
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 5px #000;
+  margin-bottom: 1rem;
+}
+
+.content-container {
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
+button {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  position: relative;
+  background-color: darkblue;
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  align-items: start;
+  cursor: pointer;
+}
+
+button.question::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  background-image: url(img/logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 18px;
+  height: 18px;
+  transition: 0.3s transform ease;
+}
+
+button.question.active::after {
+  transform: rotate(180deg);
+}
+
+.answer {
+  background-color: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.answer p{
+  padding: .5rem 1rem;
+  line-height: 1.5;
+}
+
+button.question.active {
+  text-shadow: 1px 1px 10px #fff;
+}
